@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix - Test Analysis</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+    h1 { color: green; }
+    .stats { display: flex; justify-content: space-around; margin: 20px 0; }
+    .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; width: 30%; }
+    canvas { max-width: 100%; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <h1>Momentum JEE Adv Test 04 - Analysis</h1>
+
+  <div class="stats">
+    <div class="card"><b>Rank</b><br>78</div>
+    <div class="card"><b>Score</b><br>87 / 180</div>
+    <div class="card"><b>Accuracy</b><br>77.32%</div>
+  </div>
+
+  <h2>Performance Charts</h2>
+  <canvas id="scoreChart"></canvas>
+  <canvas id="accuracyChart"></canvas>
+
+  <script>
+    // Score Chart
+    new Chart(document.getElementById('scoreChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Your Score', 'Max Score'],
+        datasets: [{
+          label: 'Scores',
+          data: [87, 180],
+          backgroundColor: ['#2ecc71', '#3498db']
+        }]
+      }
+    });
+
+    // Accuracy Pie
+    new Chart(document.getElementById('accuracyChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Accuracy', 'Mistakes'],
+        datasets: [{
+          data: [77.32, 22.68],
+          backgroundColor: ['#2ecc71', '#e74c3c']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
